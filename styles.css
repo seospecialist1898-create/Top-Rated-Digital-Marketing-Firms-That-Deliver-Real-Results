@@ -1,0 +1,156 @@
+/* styles.css - Fresh purple-indigo gradient theme with wave elements */
+:root {
+    --primary: #6366F1;
+    --secondary: #8B5CF6;
+    --accent: #EC4899;
+    --dark: #1E1B4B;
+    --light: #F8FAFC;
+    --gray: #64748B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--light); color: var(--dark); line-height: 1.7; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Header with wave */
+.header-wave {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(99,102,241,0.1);
+}
+
+.wave-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    clip-path: ellipse(150% 100% at 50% 0%);
+    opacity: 0.1;
+}
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.8rem; font-weight: 900; color: var(--primary);
+}
+
+.nav-links {
+    display: flex; gap: 2rem; list-style: none;
+}
+
+.nav-links a {
+    color: var(--dark); text-decoration: none; font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* Hero */
+.hero-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white; padding: 160px 0 100px; text-align: center;
+    margin-top: 80px;
+}
+
+.hero-gradient h1 {
+    font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2;
+}
+
+.hero-gradient p {
+    font-size: 1.3rem; max-width: 800px; margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.hero-cta {
+    background: white; color: var(--primary); padding: 1rem 2.5rem;
+    border-radius: 50px; text-decoration: none; font-weight: 700;
+    font-size: 1.1rem; transition: transform 0.3s;
+}
+
+.hero-cta:hover { transform: translateY(-3px); }
+
+/* Sections */
+.section-intro, .trends-2025, .final-cta {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.8rem; text-align: center; margin-bottom: 3rem; color: var(--dark);
+}
+
+/* Firm Cards */
+.firms-showcase {
+    padding: 80px 0;
+}
+
+.firm-card {
+    background: white; border-radius: 20px; padding: 2.5rem;
+    margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(99,102,241,0.1);
+    position: relative; transition: transform 0.3s;
+}
+
+.firm-card:hover { transform: translateY(-10px); }
+
+.rank-badge {
+    position: absolute; top: -20px; left: 30px;
+    background: var(--accent); color: white; width: 60px; height: 60px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 900;
+}
+
+.firm-card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); }
+
+.firm-card ul { margin: 1rem 0; padding-left: 1.5rem; }
+
+.firm-link {
+    display: inline-block; margin-top: 1rem; color: var(--secondary); font-weight: 700;
+}
+
+/* Trends Grid */
+.trend-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+    margin: 3rem 0;
+}
+
+.trend-item {
+    background: white; padding: 2rem; border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(139,92,246,0.1);
+    text-align: center;
+}
+
+.trend-item h4 { color: var(--secondary); margin-bottom: 0.5rem; }
+
+/* CTA */
+.final-cta {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white; text-align: center; border-radius: 24px; margin: 100px 0;
+}
+
+.mega-cta {
+    background: white; color: var(--primary); padding: 1.5rem 4rem;
+    border-radius: 50px; font-size: 1.3rem; font-weight: 900; text-decoration: none;
+    display: inline-block; margin-top: 2rem;
+}
+
+/* Footer */
+.footer-minimal {
+    background: var(--dark); color: white; padding: 3rem 0; text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-menu { display: block; }
+    .hero-gradient h1 { font-size: 2.5rem; }
+    .hero-gradient p { font-size: 1.1rem; }
+    .trend-grid { grid-template-columns: 1fr; }
+}
